@@ -56,6 +56,7 @@ const Signin = () => {
                                         <div className="p-2">
                                             <ButtonSubmit
                                                 label="Login"
+                                                className="w-full"
                                             />
                                         </div>
                                     </Form>

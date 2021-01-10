@@ -1,9 +1,9 @@
 import { Fragment } from 'react'
 import { FastField } from "formik";
 
-const FieldInput = ({label, className, placeholder, name, }) => {
+const FieldInput = ({ label, className, placeholder, name, }) => {
     return (
-        <Fragment>
+        <div>
             <span>{label}</span>
             <div>
                 <FastField
@@ -13,7 +13,7 @@ const FieldInput = ({label, className, placeholder, name, }) => {
                     name={name}
                 />
             </div>
-        </Fragment>    
+        </div>
     )
 }
 

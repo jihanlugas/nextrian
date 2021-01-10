@@ -1,8 +1,8 @@
-import UserLayout from "../components/UserLayout";
+import UserLayout from "../../components/UserLayout";
 import { useState, useEffect } from 'react';
-import ModalCreateUser from '../components/modal/ModalCreateUser';
+import ModalCreateAnggota from '../../components/modal/ModalCreateAnggota';
 
-const Home = () => {
+const Anggota = () => {
 
     const [isShowModal, setIsShowModal] = useState(false);
 
@@ -13,50 +13,52 @@ const Home = () => {
     return (
         <UserLayout>
             <div className="p-4">
-                <div className="mb-4 text-xl">
-                    <span>Users</span>
-                </div>
+                {[1,].map((num, index) => {
+                    return (
+                        <div className="mb-4 text-xl" key={index}>
+                            <span>Anggota</span>
+                        </div>
+                    )
+                })}
+
                 <div className="flex justify-end mb-2">
                     <button
-                        className='p-2 bg-blue-200'
                         onClick={() => toggleClickOverlay()}
                     >
-                        Create User
+                        Create Anggota
                     </button>
                 </div>
                 <div>
-                    <table className="w-full table-auto">
+                    <table className="w-full table-fixed">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Views</th>
-                                <th>Action</th>
+                                <th>Name</th>
+                                <th>Mandor</th>
+                                <th className="w-24">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Intro to CSS</td>
-                                <td>Adam</td>
-                                <td>858</td>
-                                <td></td>
+                                <td>Al Gazali</td>
+                                <td>Rian</td>
+                                <td>
+
+                                </td>
                             </tr>
                             <tr className="">
-                                <td>A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                                <td>Adam</td>
-                                <td>112</td>
+                                <td>Surya</td>
+                                <td>Rian</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Intro to JavaScript</td>
-                                <td>Chris</td>
-                                <td>1,280</td>
+                                <td>Bell</td>
+                                <td>Jhonny</td>
                                 <td></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <ModalCreateUser
+                <ModalCreateAnggota
                     show={isShowModal}
                     onClickOverlay={toggleClickOverlay}
                 />
@@ -65,4 +67,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Anggota;
